@@ -1,0 +1,23 @@
+{
+    "name": "j3telframework/pager-bundle",
+    "type": "symfony-bundle",
+    "description": "J3tel Symfony Pager Bundle",
+    "keywords": ["Bundle Pager"],
+    "homepage": "http://www.j3tel.fr",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aristide Soullard",
+            "email": "aristide.soullard@j3tel.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "twbs/bootstrap" : "3.1.*"
+    },
+    "autoload": {
+        "psr-0": { "J3tel\\PagerBundle": "" }
+    },
+    "target-dir": "J3tel/PagerBundle"
+}
