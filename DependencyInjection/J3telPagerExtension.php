@@ -21,6 +21,9 @@ class J3telPagerExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         
+        $container->setParameter('j3tel_pager', $config);
+        $container->setParameter('j3tel_pager.default', $config['default']);
+        
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
     }

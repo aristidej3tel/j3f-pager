@@ -19,12 +19,12 @@
 {% spaceless %}
     {% if lastPage > 1 %}
         {# the number of first and last pages to be displayed #}
-        {% set extremePagesLimit = _pager.defaultOptions['block_item'] %}
+        {% set extremePagesLimit = _pager.defaultOptions[constant('J3tel\\PagerBundle\\Interfaces\\PagerInterface::OPTION_NAME_BLOCK_ITEM')] %}
 
         {# the number of pages that are displayed around the active page #}
-        {% set nearbyPagesLimit = _pager.defaultOptions['near_item'] %}
+        {% set nearbyPagesLimit = _pager.defaultOptions[constant('J3tel\\PagerBundle\\Interfaces\\PagerInterface::OPTION_NAME_NEAR_ITEM')] %}
     <div class="pagination-centered">
-        <ul class="pagination {{_pager.defaultOptions['size']}} ">
+        <ul class="pagination {{_pager.defaultOptions[constant('J3tel\\PagerBundle\\Interfaces\\PagerInterface::OPTION_NAME_SIZE')]}} ">
         {% if currentPage > 1 %}
             <li><a href="{{ path(paginationPath, currentFilters|merge({page: currentPage-1})) }}">{{ 'pager.previous'|trans({}, 'PagerBundle') }}</a></li>
 

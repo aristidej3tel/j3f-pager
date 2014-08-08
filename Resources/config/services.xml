@@ -6,12 +6,17 @@
     
     <parameters>
         <parameter key="j3f.twig.extension.pager.class">J3tel\PagerBundle\Twig\PagerExtension</parameter>
+        <parameter key="j3f.pager.class">J3tel\PagerBundle\Pager\Pager</parameter>
     </parameters>
     
     <services>
        <service id="j3f.twig.extension.pager" class="%j3f.twig.extension.pager.class%" public="false">
             <tag name="twig.extension" />
             <argument type="service" id="service_container" />
+        </service>
+        
+       <service id="j3f.pager.class" class="%j3f.pager.class%">
+           <argument>%j3tel_pager.default%</argument>
         </service>
     </services>
 </container>

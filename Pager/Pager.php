@@ -8,18 +8,6 @@ use J3tel\PagerBundle\Interfaces\PagerInterface;
  */
 class Pager implements PagerInterface
 {
-    const OPTION_NAME_SIZE = 'size';
-    const OPTION_NAME_FIRST_PAGE = 'first_page';
-    const OPTION_NAME_ITEMS_PER_PAGE = 'items_per_page';
-    const OPTION_NAME_BLOCK_ITEM = 'block_item';
-    const OPTION_NAME_NEAR_ITEM = 'near_item';
-
-    const DEFAULT_NEAR_ITEM = 2;
-    const DEFAULT_ITEMS_PER_PAGE = 25;
-    const DEFAULT_FIRST_PAGE = 1;
-    //nombre d'element bans les block pour pagination "block"
-    const DEFAULT_BLOCK_ITEM = 3;
-
     protected $currentPage;
     protected $numberItems;
     protected $route;
@@ -28,25 +16,18 @@ class Pager implements PagerInterface
 
     public function __construct($options = array())
     {
-        $defaultOptions = array(
-            self::OPTION_NAME_SIZE => '',
-            self::OPTION_NAME_FIRST_PAGE => self::DEFAULT_FIRST_PAGE,
-            self::OPTION_NAME_ITEMS_PER_PAGE => self::DEFAULT_ITEMS_PER_PAGE,
-            self::OPTION_NAME_BLOCK_ITEM => self::DEFAULT_BLOCK_ITEM,
-            self::OPTION_NAME_NEAR_ITEM => self::DEFAULT_NEAR_ITEM,
-        );
-        $this->defaultOptions = array_merge($defaultOptions, $options);
-        $this->currentPage = $this->defaultOptions[self::OPTION_NAME_FIRST_PAGE];
+        $this->defaultOptions = $options;
+        $this->currentPage = $this->defaultOptions[PagerInterface::OPTION_NAME_FIRST_PAGE];
         $this->numberItems = 0;
         $this->extraParameters = array();
     }
     public function getBlockItem()
     {
-        return $this->defaultOptions[self::OPTION_NAME_BLOCK_ITEM];
+        return $this->defaultOptions[PagerInterface::OPTION_NAME_BLOCK_ITEM];
     }
     public function getItemsPerPage()
     {
-        return $this->defaultOptions[self::OPTION_NAME_ITEMS_PER_PAGE];
+        return $this->defaultOptions[PagerInterface::OPTION_NAME_ITEMS_PER_PAGE];
     }
     public function getDefaultOptions()
     {
@@ -145,7 +126,7 @@ class Pager implements PagerInterface
     */
     public function firstPage()
     {
-        return $this->defaultOptions[self::OPTION_NAME_FIRST_PAGE];
+        return $this->defaultOptions[PagerInterface::OPTION_NAME_FIRST_PAGE];
     }
     /**
     * Retourne le numero de la derniere page
