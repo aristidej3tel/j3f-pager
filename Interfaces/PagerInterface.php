@@ -3,7 +3,7 @@ namespace J3tel\PagerBundle\Interfaces;
 
 interface PagerInterface
 {
-    const OPTION_NAME_SIZE = 'size';
+    const OPTION_NAME_CLASS = 'class';
     const OPTION_NAME_FIRST_PAGE = 'first_page';
     const OPTION_NAME_ITEMS_PER_PAGE = 'items_per_page';
     const OPTION_NAME_BLOCK_ITEM = 'block_item';
