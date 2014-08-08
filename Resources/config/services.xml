@@ -15,7 +15,7 @@
             <argument type="service" id="service_container" />
         </service>
         
-       <service id="j3f.pager.class" class="%j3f.pager.class%">
+       <service id="j3f.pager" class="%j3f.pager.class%">
            <argument>%j3tel_pager.default%</argument>
         </service>
     </services>
