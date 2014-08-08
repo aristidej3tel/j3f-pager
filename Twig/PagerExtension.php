@@ -10,7 +10,7 @@ class PagerExtension extends \Twig_Extension
     private $container;
     private $template;
     
-    const DEFAULT_TEMPLATE = 'J3telPagerBundle:pager.html.twig';
+    const DEFAULT_TEMPLATE = 'J3telPagerBundle:Default:pager.html.twig';
     
     public function __construct(ContainerInterface $container, $template = null)
     {
