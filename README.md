@@ -29,3 +29,12 @@ Pager Default Config (YML)
             block_item: 3 #The number of first and last pages to be displayed 
             class: '' #css class name applied to pager html element
             template: 'J3telPagerBundle:Default:pager.html.twig'
+ 
+ Render Pager in Twig
+=========
+    _pager is a variable previously set in controller with pager Object (service)
+    {% block pager %}
+        {% if _pager is defined %}
+                {{ j3fPager(_pager, app.request) }}
+        {% endif %}
+    {% endblock %}
