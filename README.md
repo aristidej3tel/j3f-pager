@@ -27,4 +27,5 @@ Pager Default Config (YML)
             items_per_page: 25
             first_page: 1
             block_item: 3 #The number of first and last pages to be displayed 
-            class: '' css class name applied to pager html element
+            class: '' #css class name applied to pager html element
+            template: 'J3telPagerBundle:Default:pager.html.twig'
