@@ -34,13 +34,17 @@ class PagerExtension extends \Twig_Extension
 
     public function renderPager(Pager $pager, Request $request)
     {
-        return $this->container->get('templating')->render(
-            $this->template,
-            array(
-                '_pager' => $pager,
-                '_request' => $request
-            )
-        );
+        try {
+            return $this->container->get('templating')->render(
+                $this->template,
+                array(
+                    '_pager' => $pager,
+                    '_request' => $request
+                )
+            );
+        } catch (\Exception $e) {
+
+        }
     }
 
     public function getName()
