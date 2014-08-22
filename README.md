@@ -17,3 +17,15 @@ Pager Interface:
     public function getItemsPerPage();
     $number: Integer, Number of results 
     public function setNumberItems($number);
+
+Pager Default Config (YML)
+=========
+
+    j3tel_pager: 
+        default:
+            items_around_active_page: 2 #The number of pages that are displayed around the active page
+            items_per_page: 25
+            first_page: 1
+            block_item: 3 #The number of first and last pages to be displayed 
+            class: '' #css class name applied to pager html element
+            template: 'J3telPagerBundle:Default:pager.html.twig'
