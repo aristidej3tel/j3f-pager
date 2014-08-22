@@ -8,18 +8,12 @@ use J3tel\PagerBundle\Pager\Pager;
 class PagerExtension extends \Twig_Extension
 {
     private $container;
-    private $template;
+    private $pagerParameters;
     
-    const DEFAULT_TEMPLATE = 'J3telPagerBundle:Default:pager.html.twig';
-    
-    public function __construct(ContainerInterface $container, $template = null)
+    public function __construct(ContainerInterface $container, array $pagerParameters)
     {
         $this->container = $container;
-        if ($template === null) {
-            $this->template = self::DEFAULT_TEMPLATE;
-        } else {
-            $this->template = $template;
-        }
+        $this->pagerParameters = $pagerParameters;
     }
     
     /**
@@ -36,7 +30,7 @@ class PagerExtension extends \Twig_Extension
     {
         try {
             return $this->container->get('templating')->render(
-                $this->template,
+                $this->pagerParameters['template'],
                 array(
                     '_pager' => $pager,
                     '_request' => $request
