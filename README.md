@@ -31,7 +31,7 @@ Pager Default Config (YML)
             template: 'J3telPagerBundle:Default:pager.html.twig'
  
  Render Pager in Twig
- =========
+=========
     _pager is a variable previously set in controller with pager Object (service)
     {% block pager %}
         {% if _pager is defined %}
