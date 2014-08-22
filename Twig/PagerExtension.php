@@ -10,7 +10,7 @@ class PagerExtension extends \Twig_Extension
     private $container;
     private $pagerParameters;
     
-    public function __construct(ContainerInterface $container, array $pagerParameters)
+    public function __construct(ContainerInterface $container, $pagerParameters)
     {
         $this->container = $container;
         $this->pagerParameters = $pagerParameters;
