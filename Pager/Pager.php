@@ -177,7 +177,7 @@ class Pager implements PagerInterface
     public function middleBlockStart()
     {
         //si je ne suis pas dedans
-        if ($this->currentPage <= $this->firstBlock() or $this->currentPage >= $this->lastBlock()) {
+        if ($this->currentPage <= $this->firstBlock() || $this->currentPage >= $this->lastBlock()) {
             return intval(floor($this->getCountPage() / 2)) - intval(floor($this->getBlockItem() / 2));
         }
         //si je suis dedans
@@ -187,7 +187,7 @@ class Pager implements PagerInterface
     public function middleBlockEnd()
     {
         //si je ne suis pas dedans
-        if ($this->currentPage <= $this->firstBlock() or $this->currentPage >= $this->lastBlock()) {
+        if ($this->currentPage <= $this->firstBlock() || $this->currentPage >= $this->lastBlock()) {
             return intval(floor($this->getCountPage() / 2)) + intval(floor($this->getBlockItem() / 2));
         }
 

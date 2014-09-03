@@ -1,18 +1,17 @@
 <?php
 namespace J3tel\PagerBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use J3tel\PagerBundle\Pager\Pager;
 
 class PagerExtension extends \Twig_Extension
 {
-    private $container;
+    private $templating;
     private $pagerParameters;
     
-    public function __construct(ContainerInterface $container, $pagerParameters)
+    public function __construct($templating, $pagerParameters)
     {
-        $this->container = $container;
+        $this->templating = $templating;
         $this->pagerParameters = $pagerParameters;
     }
     
@@ -29,7 +28,7 @@ class PagerExtension extends \Twig_Extension
     public function renderPager(Pager $pager, Request $request)
     {
         try {
-            return $this->container->get('templating')->render(
+            return $this->templating->render(
                 $this->pagerParameters['template'],
                 array(
                     '_pager' => $pager,
