@@ -6,13 +6,17 @@ use J3tel\PagerBundle\Pager\Pager;
 
 class PagerExtension extends \Twig_Extension
 {
-    private $templating;
     private $pagerParameters;
-    
-    public function __construct($templating, $pagerParameters)
+    private $environment;
+
+    public function __construct($pagerParameters)
     {
-        $this->templating = $templating;
         $this->pagerParameters = $pagerParameters;
+    }
+    
+    public function initRuntime(\Twig_Environment $environment)
+    {
+        $this->environment = $environment;
     }
     
     /**
@@ -26,9 +30,9 @@ class PagerExtension extends \Twig_Extension
     }
 
     public function renderPager(Pager $pager, Request $request)
-    {
+    {   
         try {
-            return $this->templating->render(
+            return $this->environment->render(
                 $this->pagerParameters['template'],
                 array(
                     '_pager' => $pager,
